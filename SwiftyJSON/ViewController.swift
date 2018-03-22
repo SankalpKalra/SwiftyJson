@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     ]
     func GetData(){
         APIController().signUp(param: parameters) { (user) in
+            print(user.results[0].geometry.location.lat)
+            print(user.results[0].geometry.location.lng)
+            print(user.results[0].geometry.viewport.northeast.lat)
+            print(user.results[0].geometry.viewport.northeast.lng)
             print(user.results[0].name)
             print(user.status)
         }
