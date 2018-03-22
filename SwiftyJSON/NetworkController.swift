@@ -9,10 +9,10 @@
 import Foundation
 class NetworkController{
     
-    func Swifty(Jsonurl:String,parameters:[String:Any],headers:[String:String], success:@escaping (JSON)->Void){
+    func GetSwiftyJSON(url:String,parameters:[String:Any],headers:[String:String], success:@escaping (JSON)->Void){
         
-        if let urlSt = URL(string: Jsonurl){
-            if let data = try? String(contentsOf: urlSt){
+        if let urlString = URL(string: url){
+            if let data = try? String(contentsOf: urlString){
                 let json = JSON(parseJSON: data)
                 success(json)
 //                let result = json["results"].arrayValue
